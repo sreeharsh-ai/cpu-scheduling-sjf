@@ -12,7 +12,6 @@ struct process
 int main()
 {
     int n;
-    printf("Enter number of processes: ");
     scanf("%d", &n);
 
     struct process p[n];
@@ -62,16 +61,20 @@ int main()
         }
     }
 
-    printf("\nWaiting Time:\n");
+    printf("Waiting Time:\n");
     for(int i=0;i<n;i++)
-    printf("%s %d\n", p[i].pid, p[i].wt);
+    {
+        printf("%s %d\n", p[i].pid, p[i].wt);
+    }
 
-    printf("\nTurnaround Time:\n");
+    printf("Turnaround Time:\n");
     for(int i=0;i<n;i++)
-    printf("%s %d\n", p[i].pid, p[i].tat);
+    {
+        printf("%s %d\n", p[i].pid, p[i].tat);
+    }
 
-    printf("\nAverage Waiting Time: %.2f", total_wt/n);
-    printf("\nAverage Turnaround Time: %.2f\n", total_tat/n);
+    printf("Average Waiting Time: %.2f\n", total_wt/n);
+    printf("Average Turnaround Time: %.2f\n", total_tat/n);
 
     return 0;
 }
